@@ -9,12 +9,15 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.concurrent.BlockingQueue;
 
 @Service
 public class CriarTransacao {
     private final ClienteRepository clienteRepository;
-    public CriarTransacao(ClienteRepository clienteRepository) {
+    private final BlockingQueue<Cliente> clienteQueue;
+    public CriarTransacao(ClienteRepository clienteRepository, BlockingQueue<Cliente> clienteQueue) {
         this.clienteRepository = clienteRepository;
+        this.clienteQueue = clienteQueue;
     }
 
     @Transactional
@@ -24,7 +27,9 @@ public class CriarTransacao {
             throw new ClienteNaoEncontradoException("Cliente não encontrado");
         }
         Cliente cliente = clienteOptional.get();
+        clienteQueue.add(cliente);
         cliente.atualizarSaldo(transacao);
-        return clienteRepository.save(cliente);
+        //return clienteRepository.save(cliente);
+        return cliente;
     }
 }

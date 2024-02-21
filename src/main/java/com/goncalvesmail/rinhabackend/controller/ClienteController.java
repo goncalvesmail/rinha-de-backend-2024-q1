@@ -11,6 +11,8 @@ import com.goncalvesmail.rinhabackend.usecase.RecuperaExtrato;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.BlockingQueue;
+
 @RestController("clientes")
 @RequestMapping("/clientes")
 public class ClienteController {

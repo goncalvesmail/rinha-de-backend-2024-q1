@@ -21,7 +21,7 @@ services:
       resources:
         limits:
           cpus: "0.7"
-          memory: "1000MB"
+          memory: "250MB"
           
 #  adminer:
 #    image: adminer
@@ -49,7 +49,7 @@ services:
       resources:
         limits:
           cpus: "0.35"
-          memory: "500MB"
+          memory: "150MB"
 
   app2:
     <<: *app
