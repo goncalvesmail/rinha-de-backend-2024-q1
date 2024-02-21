@@ -11,7 +11,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ClienteQueueConfig {
     @Bean
     public BlockingQueue<Cliente> clienteQueue(){
-        return new LinkedBlockingQueue<Cliente>();
+        return new LinkedBlockingQueue<>();
     }
 
     @Bean
