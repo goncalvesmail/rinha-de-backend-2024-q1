@@ -25,4 +25,4 @@ Para subir a aplicação é necessário ter o doker instalado. Execute o comando
 docker-compose up
 ```
 
-<h4>📍 Para maiores delhes acessar o repositório da [Rinha](https://github.com/zanfranceschi/rinha-de-backend-2024-q1)</h4>
+Para maiores delhes acessar o repositório da [Rinha](https://github.com/zanfranceschi/rinha-de-backend-2024-q1)
